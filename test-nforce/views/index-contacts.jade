@@ -1,0 +1,44 @@
+extends ../node_modules/jade-bootstrap/layouts/navbar-fixed-force
+
+append body
+
+  +navbar("tmusaApp","navbar", "inverse")
+    +nav_item("/") Home
+    +nav_item("/accounts") Accounts
+    +nav_item("/contacts", "active") Contacts
+    +nav_item("#") Opportunities
+  
+  .container
+    div(style='padding-bottom:10px;')
+ 
+    div
+      form.form-signin(action="/create-contact", method="get")
+         button.btn.btn-large.btn-primary(type="submit", style='margin:1px;') Create Contact
+      table.table.table-striped.table-hover.span12
+        thead
+          tr 
+            th Id 
+            th Name
+            th Email
+            th Phone
+        tbody
+          - each r in records
+            
+            tr
+             form.form-signin(action="/delete-contact", method="post")
+              td
+                 input.input-block-level(type="text", 
+                                         name="id", 
+                                         value=r.get('id'), readonly
+                                         )
+              td= r.get('Name')
+              td= r.get('Email')
+              td= r.get('Phone')
+              td
+                button.btn.btn-large.btn-primary(type="submit", style='margin:1px;') Del
+
+
+ 
+
+       
+

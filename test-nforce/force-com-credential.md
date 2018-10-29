@@ -1,0 +1,4 @@
+client_id=3MVG9i1HRpGLXp.rrmi2PlrYJHy6L3aAjjSO8FhhneUkMQgyVAQLkBvP4QrnbYuEW0Ha2KegMs5bL7M2RadaS
+client_secret=927844985199646305
+username=donapeqo@usa-tm.com
+password=jonsnow123

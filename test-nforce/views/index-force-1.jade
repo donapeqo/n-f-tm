@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+
+  div
+  table
+    thead
+      tr 
+        th Id 
+        th Name
+        th Type
+        th CreatedDate
+    tbody
+      - each r in records
+        tr
+          td= r.get('Id') 
+          td= r.get('Name')
+          td= r.get('Type')
+          td= r.get('CreatedDate')
+
+       
+

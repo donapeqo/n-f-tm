@@ -1,0 +1,38 @@
+extends ../node_modules/jade-bootstrap/layouts/navbar-fixed-force
+
+append body
+
+  +navbar("tmusaApp","navbar", "inverse")
+    +nav_item("/") Home
+    +nav_item("/accounts") Accounts
+    +nav_item("/contacts") Contacts
+    +nav_item("#") Opportunities
+    +nav_item("#") Price Book
+
+  
+  .container
+    div(style='padding-bottom:10px;')
+ 
+    div
+      form.form-signin(action="/create-account", method="get")
+      table.table.table-striped.table-hover.span12
+        thead
+          tr 
+            th Name 
+            th Account
+            th Cable Route
+        tbody
+          - each r in records
+            tr
+             form.form-signin(action="/delete-account", method="post")
+              td= r.get('Name')
+              td= r.get('Account__r.Name')
+              td= r.get('Cable_Route__r.Name')
+              td
+                button.btn.btn-large.btn-primary(type="submit", style='margin:1px;') Del
+
+
+ 
+
+       
+
