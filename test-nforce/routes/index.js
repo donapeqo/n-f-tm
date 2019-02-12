@@ -96,12 +96,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/priceBook', function(req, res, next) {
- org.query({ query: "SELECT Name, Account__r.Name, Cable_Route__r.Name FROM Price_Book__c Order BY LastModifiedDate DESC" })
+ org.query({ 
+  query: 
+  "SELECT Name, Account__r.Name, Account__r.OwnerId, Account__r.CreatedById,  Cable_Route__r.Name, Date__c, MRC__c, OTC__c FROM Price_Book__c Order BY LastModifiedDate DESC" 
+})
   .then(function(results){
+    console.log("====results records below =============== ");
+    console.log(results.records[0]);
+    console.log("====results records.fields below =============== ");
+    console.log(results.records[0]._fields);
     res.render('index-priceBook', { records: results.records });
-
   });
-
  });
 
 
