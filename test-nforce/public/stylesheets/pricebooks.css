@@ -1,0 +1,49 @@
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: center;
+}
+
+/* For Index-Table Layout */
+#pricebook_table td:nth-child(1) {
+  width: 20%;
+}
+
+#pricebook_table td:nth-child(2),
+#pricebook_table td:nth-child(3) {
+  width: 15%;
+}
+
+#pricebook_table td:nth-child(4),
+#pricebook_table td:nth-child(5) {
+  width: 20%;
+}
+#pricebook_table td:nth-child(6) {
+  width: 10%;
+}
+
+/* For Show-Table Layout */
+.submitted-products td:nth-child(1) {
+  width: 20%;
+}
+
+.submitted-products td:nth-child(2),
+.submitted-products td:nth-child(5) {
+  width: 5%;
+}
+
+.submitted-products td:nth-child(3),
+.submitted-products td:nth-child(4),
+.submitted-products td:nth-child(6) {
+  width: 10%;
+}
+.submitted-products td:nth-child(7) {
+  width: 12%;
+}

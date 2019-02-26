@@ -1,0 +1,52 @@
+<% layout('layouts/show-pricebook') -%>
+
+<div class="container">
+  <h1>TM Price Book page</h1>
+</div>
+<div class="container table-responsive">
+  <table class="pricebook_table display">
+    <thead>
+      <tr>
+        <th>Country A</th>
+        <th>Account Name</th>
+        <th>Cable Route</th>
+        <th>MRC</th>
+        <th>OTC</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% records.forEach(function(record) { %>
+      <tr>
+        <td>
+          <%= record._fields.country_a__r.Name %>
+        </td>
+        <td>
+          <%= record._fields.account__r.Name %>
+        </td>
+        <td>
+          <%= record._fields.cable_route__r.Name %>
+        </td>
+        <td>$
+          <%= record._fields.mrc__c %>
+        </td>
+        <td>$
+          <%= record._fields.otc__c %>.00</td>
+          <td>
+            <%= record._fields.date__c %>
+          </td>
+      </tr>
+      <% }); %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Country A</th>
+        <th>Account</th>
+        <th>Cable Route</th>
+        <th>MRC</th>
+        <th>OTC</th>
+        <th>Date</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title><%= title %></title>
+  <style media="screen">
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="/stylesheets/pricebooks.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/javascripts/filter.js"></script>
+  <!-- <script type="text/javascript" src="/javascripts/excel-filter.js"></script> -->
+</head>
+
+<body>
+  <% include ../partials/navbar %>
+  <%- body -%>
+</body>
+
+</html>

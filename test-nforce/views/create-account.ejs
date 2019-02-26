@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate') -%>
+
+<h1>Create Account</h1>
+
+<form class="" action="create-account" method="POST">
+  <div><input type="text" name="name" placeholder="Name"></div>
+  <div>
+    <select class="" name="industry" placeholder="Industry">
+    <% var indOptions = ["Apparel", "Biotechnology", "Construction", "Consulting", "Education", "Electronics", "Energy", "Hospitality", "Transportation"] %>
+    <% for (var i = 0; i < indOptions.length; i++) { %>
+      <option value="<%=indOptions[i]%>"><%=indOptions[i]%></option>
+    <% } %>
+  </select>
+</div>
+  <div>
+    <select class="" name="type" placeholder="Type">
+    <% var typeOptions = ["Customer - Direct", "Customer - Channel"] %>
+    <% for (var i = 0; i < typeOptions.length; i++) { %>
+      <option value="<%=typeOptions[i]%>"><%=typeOptions[i]%></option>
+    <% } %>
+  </select>
+</div>
+  <button>Create</button>
+</form>

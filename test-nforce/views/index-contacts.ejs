@@ -1,0 +1,46 @@
+<% layout('layouts/show-pricebook') -%>
+
+<div class="container">
+  <h1><%= title %></h1>
+</div>
+
+<div class="container table-responsive">
+  <table class="pricebook_table display">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <% if (currentUser && currentUser.isAdmin){ %>
+        <th>Owner</th>
+        <% }; %>
+      </tr>
+    </thead>
+    <tbody>
+      <% records.forEach(function(record) { %>
+      <tr>
+        <td><%= record._fields.name %></td>
+        <td><%= record._fields.email %></td>
+        <td><%= record._fields.phone %></td>
+        <td>
+          <% if (currentUser && currentUser.isAdmin){ %>
+            <div class="text-center">
+              <form class="form-inline" action="/pricebooks/delete-contact/<%= record._fields.id %>" method="POST">
+                <button class="btn btn-sm btn-danger">Delete</button>
+              </form>
+            </div>
+          <% }; %>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Owner</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    padding: 5px;
+  }
+</style>
+
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/pricebooks">Pricebook</a></li>
+  <li><a href="/pricebooks/accounts">Accounts</a></li>
+  <li><a href="/pricebooks/contacts">Contacts</a></li>
+  <% if(!currentUser) { %>
+    <li><a href="/login">Login</a></li>
+  <% } else {%>
+    <% if(currentUser && currentUser.isAdmin) { %>
+      <li><a href="/pricebooks/create-account">Create Account</a></li>
+      <li><a href="/pricebooks/create-contact">Create Contact</a></li>
+    <li><a href="/register">Register</a></li>
+    <% } %>
+    <!-- <li><a href="/posts/new">New Post</a></li> -->
+    <li><a href="/logout">Logout</a></li>
+    Welcome, <%= currentUser.username %>!
+  <% } %>
+</ul>
